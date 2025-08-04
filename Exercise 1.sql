@@ -6,4 +6,4 @@ END;
 $$ LANGUAGE plpgsql;
 
 
-SELECT greet_user('Stav');
+SELECT greet_user('Alex');

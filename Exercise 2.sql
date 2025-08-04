@@ -9,3 +9,6 @@ BEGIN
     );
 END;
 $$;
+
+
+CALL create_orders_table();

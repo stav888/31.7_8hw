@@ -4,3 +4,6 @@ BEGIN
     RETURN x * y * z;
 END;
 $$ LANGUAGE plpgsql;
+
+
+SELECT multiply_three(2, 3, 4);

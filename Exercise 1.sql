@@ -4,3 +4,6 @@ BEGIN
     RETURN 'Hello ' || name || '! The time is ' || CURRENT_TIMESTAMP;
 END;
 $$ LANGUAGE plpgsql;
+
+
+SELECT greet_user('Alex');

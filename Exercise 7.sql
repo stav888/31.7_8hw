@@ -5,13 +5,15 @@ RETURNS TABLE (
     title TEXT,
     publish_date DATE
 )
-LANGUAGE sql
-AS $$
+LANGUAGE plpgsql AS
+$$
+BEGIN
+    RETURN QUERY
     SELECT b.title, b.publish_date
     FROM books b
     ORDER BY b.publish_date DESC
     LIMIT 1;
+END;
 $$;
-
 
 SELECT * FROM sp_latest_book();

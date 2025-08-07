@@ -32,12 +32,16 @@ INSERT INTO books (title, price, publish_date, author_id) VALUES
 ('Colorless Tsukuru Tazaki', 47.5, '2013-04-12', 3);
 
 
+DROP FUNCTION IF EXISTS sp_get_books_with_year();
+
 CREATE OR REPLACE FUNCTION sp_get_books_with_year()
 RETURNS TABLE (
     title TEXT,
     publish_year INT,
     price DOUBLE PRECISION
-) AS $$
+)
+LANGUAGE plpgsql AS
+$$
 BEGIN
     RETURN QUERY
     SELECT
@@ -47,7 +51,6 @@ BEGIN
     FROM
         books b;
 END;
-$$ LANGUAGE plpgsql;
-
+$$;
 
 SELECT * FROM sp_get_books_with_year();

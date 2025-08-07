@@ -1,3 +1,5 @@
+DROP FUNCTION IF EXISTS create_orders_table();
+
 CREATE OR REPLACE PROCEDURE create_orders_table()
 LANGUAGE plpgsql
 AS $$
@@ -9,6 +11,5 @@ BEGIN
     );
 END;
 $$;
-
 
 CALL create_orders_table();

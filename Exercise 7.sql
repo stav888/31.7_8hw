@@ -1,3 +1,5 @@
+DROP FUNCTION IF EXISTS sp_latest_book();
+
 CREATE OR REPLACE FUNCTION sp_latest_book(
     OUT title TEXT,
     OUT publish_date DATE
